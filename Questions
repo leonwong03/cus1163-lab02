@@ -1,0 +1,17 @@
+1. How many system calls does each method make?
+- System Call Method (openat -> read -> read -> close): had 4 calls for reading /proc/version
+- Library Method (fopen/fgets/fclose): 0 because it crashed (SIGSEGV) before it was able to do the file reading calls
+
+2. What's the difference between fopen() and open()?
+- open(): opens a file using the OS interface and returns a int file descriptor
+- fopen(): opens a file using C library and returns "FILE*" stream (basically buffered, higher level)
+
+3. Why does the library method make different system calls?
+- I think it's because C's library adds buffering and stream management so it might've done extra or different syscalls (reads, metadata checks, etc) 
+  compared to directly calling open/read/close
+
+Comfortability score [ 5 / 5 ]
+Completeness score [ 5 / 5 ]
+
+A win: Managed to run the program on Linux (got new laptop that can handle Ubuntu yay!) and learned how to use strace to see system calls. 
+Helped me see the difference between low level sys calls and higher level library funcs when accessing files through /proc.
