@@ -15,3 +15,5 @@ Completeness score [ 5 / 5 ]
 
 A win: Managed to run the program on Linux (got new laptop that can handle Ubuntu yay!) and learned how to use strace to see system calls. 
 Helped me see the difference between low level sys calls and higher level library funcs when accessing files through /proc.
+
+Question: Will we only be uploading github links? Was not sure how you would like us to upload screenshots but I made sure my output is in syscalls.txt
